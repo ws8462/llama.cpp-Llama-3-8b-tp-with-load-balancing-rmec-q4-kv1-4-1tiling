@@ -256,7 +256,7 @@ class tinyBLAS {
   private:
     NOINLINE void mnpack(int64_t m0, int64_t m, int64_t n0, int64_t n) {
         int64_t mc, nc, mp, np;
-        switch ((MIN(m - m0, 5) << 4) | MIN(n - n0, 5)) {
+        switch ((MIN(m - m0, 4) << 4) | MIN(n - n0, 5)) {
 #if VECTOR_REGISTERS == 32
         case 0x55:
             mc = 5;
